@@ -1,0 +1,181 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/uMmNAJ5bmoVO27FBVN5Ily-hEaM\"",
+ "discoveryVersion": "v1",
+ "id": "newsStoryEndpoint:v1",
+ "name": "newsStoryEndpoint",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "api.tinyMouse.com",
+ "ownerName": "api.tinyMouse.com",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://myApplicationId.appspot.com/_ah/api/newsStoryEndpoint/v1/",
+ "basePath": "/_ah/api/newsStoryEndpoint/v1/",
+ "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
+ "servicePath": "newsStoryEndpoint/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "CollectionResponse_NewsStory": {
+   "id": "CollectionResponse_NewsStory",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "NewsStory"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "NewsStory": {
+   "id": "NewsStory",
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "storyHead": {
+     "type": "string"
+    },
+    "storyText": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "insertNewsStory": {
+   "id": "newsStoryEndpoint.insertNewsStory",
+   "path": "newsstory",
+   "httpMethod": "POST",
+   "request": {
+    "$ref": "NewsStory",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "NewsStory"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "listNewsStory": {
+   "id": "newsStoryEndpoint.listNewsStory",
+   "path": "newsstory",
+   "httpMethod": "GET",
+   "parameters": {
+    "count": {
+     "type": "integer",
+     "format": "int32",
+     "location": "query"
+    },
+    "cursor": {
+     "type": "string",
+     "location": "query"
+    }
+   },
+   "response": {
+    "$ref": "CollectionResponse_NewsStory"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "removeNewsStory": {
+   "id": "newsStoryEndpoint.removeNewsStory",
+   "path": "newsstory/{id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateNewsStory": {
+   "id": "newsStoryEndpoint.updateNewsStory",
+   "path": "newsstory",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "NewsStory",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "NewsStory"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

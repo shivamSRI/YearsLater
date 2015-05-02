@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0FFFF"
+    android:orientation="vertical"
+    tools:context="com.tinymouse.a0131914.yearslater.FragmentMain">
+
+    <LinearLayout
+        android:gravity="center_horizontal|top"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+        <!--
+        <ImageView
+            android:id="@+id/vertical_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+        -->
+        <TextView
+            style="@style/CustomTextHead"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NewsStoryHeader"
+            android:id="@+id/StoryHeader"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_weight="0"
+            android:paddingLeft="6dip"
+            android:paddingRight="6dip"
+            android:background="#FFFFFF"
+            android:textColor="@color/sunshine_dark_blue"
+            android:textAppearance="?android:textAppearanceLarge"
+        />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        style="@style/CustomTextBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NewsStoryBody"
+        android:id="@+id/StoryBody"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:paddingLeft="6dip"
+        android:paddingRight="6dip"
+        android:background="#FFFFFF"/>
+</LinearLayout>
